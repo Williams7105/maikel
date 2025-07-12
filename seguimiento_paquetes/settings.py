@@ -71,17 +71,20 @@ ROOT_URLCONF = "seguimiento_paquetes.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],  # o como tú lo tengas
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
+                "django.template.context_processors.debug",
                 "django.template.context_processors.request",
-                "django.contrib.auth.context_processors.auth",
-                "django.contrib.messages.context_processors.messages",
+                "django.contrib.auth.context_processors.auth",  # ✅ Necesario
+                "django.contrib.messages.context_processors.messages",  # ✅ Necesario
+                # ... puedes tener más, pero estos son imprescindibles
             ],
         },
     },
 ]
+
 
 WSGI_APPLICATION = "seguimiento_paquetes.wsgi.application"
 
