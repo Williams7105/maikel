@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-0aux(ty_x^hsuq2=gogk5%%gmnv#*1vwww4^et*!w38tk4t9)c"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "maikel.onrender.com",
@@ -139,6 +139,7 @@ CSRF_TRUSTED_ORIGINS = [
 STATIC_URL = "static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 
 # Default primary key field type
