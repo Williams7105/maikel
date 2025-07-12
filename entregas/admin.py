@@ -25,3 +25,8 @@ class EntregaAdmin(admin.ModelAdmin):
         self.message_user(
             request, f"{actualizadas} entrega(s) marcadas como entregadas."
         )
+
+
+admin.site.site_header = "Maikel Express • Panel de Seguimiento"
+admin.site.site_title = "Admin Maikel"
+admin.site.index_title = "Gestión de Entregas en Tiempo Real"
