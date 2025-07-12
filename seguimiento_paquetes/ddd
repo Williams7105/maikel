@@ -1,0 +1,10 @@
+git config --global user.name "Williams"
+git config --global user.email "williamsmartinez7105@gmail.com"
+git config --global user.email "williams.williamsmartinez7105v@gmail.com"
+@Williams7105
+
+https://github.com/Williams7105/maikel.git
+git remote set-url origin https://github.com/Williams7105/maikel.git
+
+
+git remote set-url origin https://github.com/Williams7105/maikel.git
