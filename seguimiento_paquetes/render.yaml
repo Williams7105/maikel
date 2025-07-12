@@ -2,7 +2,11 @@ services:
   - type: web
     name: seguimiento-entregas
     env: python
-    buildCommand: pip install -r requirements.txt
+
+    buildCommand: |
+      pip install -r requirements.txt
+      python manage.py collectstatic --noinput
+
     startCommand: gunicorn seguimiento_paquetes.wsgi
     plan: free
     region: oregon
@@ -10,17 +14,22 @@ services:
     envVars:
       - key: SECRET_KEY
         value: django-insecure-una-clave-super-secreta
+
       - key: DJANGO_SETTINGS_MODULE
         value: seguimiento_paquetes.settings
+
       - key: DEBUG
         value: False
+
       - key: ALLOWED_HOSTS
         value: seguimiento-entregas.onrender.com
-      - key: DATABASE_URL
-        value: sqlite:///db.sqlite3 # Cámbialo si usas PostgreSQL
 
-      # Claves opcionales para funciones avanzadas
+      - key: DATABASE_URL
+        value: sqlite:///db.sqlite3
+
+      # Variables opcionales para funcionalidades avanzadas
       - key: GOOGLE_MAPS_API_KEY
         value: TU_CLAVE_DE_MAPAS
+
       - key: FIREBASE_CONFIG_JSON
         value: TU_JSON_EN_STRING
