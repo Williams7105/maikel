@@ -2,6 +2,7 @@ services:
   - type: web
     name: seguimiento-entregas
     env: python
+    runtime: python3.11 # ← Esto fuerza una versión compatible
 
     buildCommand: |
       pip install -r requirements.txt
