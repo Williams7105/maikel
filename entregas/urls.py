@@ -1,7 +1,5 @@
 from django.urls import path
-from .views import vista_mapa, ver_estadisticas
-from .views import pagina_inicio
-
+from .views import pagina_inicio, vista_mapa, ver_estadisticas
 
 urlpatterns = [
     path("", pagina_inicio, name="inicio"),
