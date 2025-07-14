@@ -23,3 +23,6 @@ def ver_estadisticas(request):
 
 def vista_mapa(request):
     return render(request, "entregas/mapa.html")
+
+def pagina_inicio(request):
+    return render(request, "entregas/index.html")
