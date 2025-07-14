@@ -64,3 +64,9 @@ git add .gitignore
 git add templates/admin/base_site.html
 git add staticfiles/img/maikel.png
 git add entregas/templates/entregas/mapa.html
+
+-34.8499537211261, -56.198720261938796
+
+git add .
+git commit -m "Actualizo interfaz moderna"
+git push
