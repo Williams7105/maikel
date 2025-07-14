@@ -1,61 +1,22 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Entregas en Mapa</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <title>Maikel Express</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% load static %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-    <style>
-      #map {
-        height: 90vh;
-      }
-    </style>
+    <link rel="icon" href="{% static 'img/maikel.png' %}" type="image/png" />
   </head>
   <body>
-    <h1 style="text-align: center">Mapa de Entregas</h1>
-    <div id="map"></div>
-
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script>
-      const map = L.map("map").setView(
-        [-34.8499537211261, -56.198720261938796],
-        11
-      );
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
-        map
-      );
-
-      const iconoEntrega = (estado) => {
-        const colores = {
-          pendiente: "orange",
-          en_ruta: "blue",
-          entregada: "green",
-        };
-        return L.divIcon({
-          html: `<i style="background:${
-            colores[estado] || "gray"
-          }; display:block; width:18px; height:18px; border-radius:50%;"></i>`,
-          className: "custom-icon",
-          iconSize: [18, 18],
-        });
-      };
-
-      fetch("/api/entregas/")
-        .then((res) => res.json())
-        .then((data) => {
-          data.forEach((entrega) => {
-            if (entrega.latitud && entrega.longitud) {
-              L.marker([entrega.latitud, entrega.longitud], {
-                icon: iconoEntrega(entrega.estado),
-              })
-                .addTo(map)
-                .bindPopup(
-                  `<strong>${entrega.codigo}</strong><br>${entrega.estado}<br>${entrega.direccion}`
-                );
-            }
-          });
-        });
-    </script>
+    <div class="contenedor">
+      <img src="{% static 'img/maikel.png' %}" alt="Logo Maikel" class="logo" />
+      <h1>Maikel Express</h1>
+      <p>Seguimiento inteligente de entregas en tiempo real 📍🚚</p>
+      <div class="botones">
+        <a href="/mapa-vista/" class="boton mapa">Ver Mapa de Entregas</a>
+        <a href="/admin/" class="boton admin">Panel de Gestión</a>
+      </div>
+    </div>
   </body>
 </html>

@@ -8,6 +8,6 @@ router.register(r"entregas", EntregaViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/", include(router.urls)),  # Para API REST
-    path("", include("entregas.urls")),  # Para vistas como /mapa-vista/
+    path("api/", include(router.urls)),
+    path("", include("entregas.urls")),
 ]

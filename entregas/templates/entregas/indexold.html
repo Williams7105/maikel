@@ -1,9 +1,9 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <title>Entregas en Mapa</title>
-    {% load static %}
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     <style>
@@ -18,7 +18,10 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      const map = L.map("map").setView([25.7617, -80.1918], 11);
+      const map = L.map("map").setView(
+        [-34.8499537211261, -56.198720261938796],
+        11
+      );
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
         map
       );
