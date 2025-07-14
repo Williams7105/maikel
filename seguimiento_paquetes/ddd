@@ -6,7 +6,6 @@ git config --global user.email "williams.williamsmartinez7105v@gmail.com"
 https://github.com/Williams7105/maikel.git
 git remote set-url origin https://github.com/Williams7105/maikel.git
 
-
 git remote set-url origin https://github.com/Williams7105/maikel.git
 
 ¡Perfecto, Williams! 🔥 Ya tienes tu repositorio Git local funcionando, estás listo para subirlo a GitHub, y tu proyecto Django se está acercando al despliegue en Render.
@@ -18,13 +17,14 @@ git remote set-url origin https://github.com/Williams7105/maikel.git
 ✔️ Ya creaste tu repositorio en GitHub (o estás por hacerlo)
 
 🚀 Lo siguiente: subir a GitHub correctamente
+
 - Conecta tu repositorio real de GitHub, con este comando:
-git remote set-url origin https://github.com/tu_usuario/nombre_del_repo.git
+  git remote set-url origin https://github.com/tu_usuario/nombre_del_repo.git
 - Ejemplo real (ajústalo a tu nombre de usuario y repo):
-git remote set-url origin https://github.com/williams-dev/seguimiento-entregas.git
-- Empuja tu código al repositorio:
-git push -u origin main
-🔐 Si Git te pide autenticación, se abrirá el navegador para que inicies sesión con GitHub.💡 Y luego en Render:- Entra a Render Dashboard
+  git remote set-url origin https://github.com/williams-dev/seguimiento-entregas.git
+  - Empuja tu código al repositorio:
+  git push -u origin main
+  🔐 Si Git te pide autenticación, se abrirá el navegador para que inicies sesión con GitHub.💡 Y luego en Render:- Entra a Render Dashboard
 - Crea un nuevo Web Service
 - Selecciona tu repo GitHub
 - Configura comandos:
@@ -32,11 +32,35 @@ git push -u origin main
 - Start: gunicorn seguimiento_paquetes.wsgi
 - Añade variables de entorno (DEBUG=False, SECRET_KEY=..., etc.)
 - ¡Listo para desplegar!
-¿Te ayudo ahora a generar el archivo render.yaml, revisar tu requirements.txt, o conectar con base de datos en la nube? Ya estás a punto de tener tu app Django en producción 🎯🌍
+  ¿Te ayudo ahora a generar el archivo render.yaml, revisar tu requirements.txt, o conectar con base de datos en la nube? Ya estás a punto de tener tu app Django en producción 🎯🌍
 
 subir nuevos cambios al repositorio de GitHub
 
 git add .
 git commit -m "Render.yaml actualizado con staticfiles para despliegue completo"
 git push origin main
+git add mapa.html
 
+TEMPLATES = [
+{
+"BACKEND": "django.template.backends.django.DjangoTemplates",
+"DIRS": [],
+"APP_DIRS": True,
+"OPTIONS": {
+"context_processors": [
+"django.template.context_processors.request",
+"django.contrib.auth.context_processors.auth",
+"django.contrib.messages.context_processors.messages",
+],
+},
+},
+]
+
+.\env\Scripts\activate
+
+git add seguimiento_paquetes/settings.py
+git add seguimiento_paquetes/render.yaml
+git add .gitignore
+git add templates/admin/base_site.html
+git add staticfiles/img/maikel.png
+git add entregas/templates/entregas/mapa.html

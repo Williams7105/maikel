@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Estadísticas de Entregas</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+  <body>
+    <div class="contenedor">
+      <h1>📊 Estadísticas de Entregas</h1>
+      <p>Entregas pendientes: {{ pendientes }}</p>
+      <p>Entregas en ruta: {{ en_ruta }}</p>
+      <p>Entregas completadas: {{ entregadas }}</p>
+      <p>Total entregas: {{ total }}</p>
+      <a href="/" class="boton mapa">← Volver</a>
+    </div>
+  </body>
+</html>
