@@ -18,7 +18,10 @@
 
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>
-      const map = L.map("map").setView([25.7617, -80.1918], 11);
+      const map = L.map("map").setView(
+        [-34.85111461284606, -56.198205859028],
+        11
+      );
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(
         map
       );
