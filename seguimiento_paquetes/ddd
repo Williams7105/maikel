@@ -70,3 +70,19 @@ git add entregas/templates/entregas/mapa.html
 git add .
 git commit -m "Actualizo interfaz moderna"
 git push
+
+
+
+para salvar todos los cambios en la base de datos, puedes usar:
+
+python manage.py makemigrations
+python manage.py migrate
+git add .
+git commit -m "Migraciones actualizadas"
+git push origin main
+git add .
+git commit -m "Actualizo interfaz moderna"
+git push origin main
+
+y para ejecutar mi sevidor
+python manage.py runserver
